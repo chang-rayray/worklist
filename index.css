@@ -1,0 +1,187 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-color: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+    background-attachment: fixed;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.task-item {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+/* Stagger animations */
+.task-item:nth-child(1) { animation-delay: 0.1s; }
+.task-item:nth-child(2) { animation-delay: 0.2s; }
+.task-item:nth-child(3) { animation-delay: 0.3s; }
+.task-item:nth-child(4) { animation-delay: 0.4s; }
+.task-item:nth-child(5) { animation-delay: 0.5s; }
+.task-item:nth-child(6) { animation-delay: 0.6s; }
+
+.task-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(56, 189, 248, 0.3);
+    background: rgba(30, 41, 59, 0.8);
+}
+
+.task-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    opacity: 0.8;
+    background: rgba(56, 189, 248, 0.1);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.task-content {
+    flex-grow: 1;
+}
+
+.task-content h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.task-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+}
+
+.task-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.task-link:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.task-link span {
+    font-size: 1.1rem;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+    
+    .task-number {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+}

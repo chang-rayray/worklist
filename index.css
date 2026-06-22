@@ -1,11 +1,11 @@
 :root {
-    --bg-color: #0f172a;
-    --card-bg: rgba(30, 41, 59, 0.7);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent-color: #38bdf8;
-    --accent-hover: #0ea5e9;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --bg-color: #fdfcf8;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --accent-color: #0284c7;
+    --accent-hover: #0369a1;
+    --border-color: rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -89,9 +89,9 @@ header p {
 
 .task-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border-color: rgba(56, 189, 248, 0.3);
-    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-color: rgba(2, 132, 199, 0.3);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .task-number {
